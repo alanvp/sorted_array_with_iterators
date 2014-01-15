@@ -64,16 +64,16 @@ class SortedArray
   end
 
   def map! &block
-    arr = []
-    each {|elem| arr << yield(elem) }
-    @internal_arr = arr 
-    return @internal_arr
-    # x = 0
-    # until @internal_arr[x] == nil do
-    #   @internal_arr[x] = yield @internal_arr[x]
-    #   x += 1
-    # end
+    # arr = []
+    # each {|elem| arr << yield(elem) }
+    # @internal_arr = arr 
     # return @internal_arr
+    x = 0
+    until @internal_arr[x] == nil do
+      @internal_arr[x] = yield @internal_arr[x]
+      x += 1
+    end
+    return @internal_arr
 #    raise NotImplementedError.new("You need to implement the map! method!")
   end
 
